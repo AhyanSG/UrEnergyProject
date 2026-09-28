@@ -133,5 +133,27 @@
     storeTheme(next);
   });
 </script>
+
+<script>
+  // Mobile navbar toggle
+  document.querySelectorAll('.nav-toggle').forEach((toggle) => {
+    const targetId = toggle.getAttribute('aria-controls');
+    const menu = document.getElementById(targetId);
+    if (!menu) return;
+
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      menu.classList.toggle('show', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open', 'show');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+</script>
 </body>
 </html>
