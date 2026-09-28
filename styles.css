@@ -1253,25 +1253,38 @@ button:focus-visible{
   .nav.navbar .nav-links.show { display: flex; }
 }
 
-/* ===== FIX JARAK NAVBAR ===== */
+/* ===== FIX NAVBAR DESKTOP ===== */
+@media (min-width: 861px) {
 
-.nav .wrap {
-  display: flex;
-  align-items: center;
-}
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+  }
 
-/* Jarak UrEnergy ke menu */
-.nav-links {
-  display: flex;
-  gap: 32px;
-  margin-left: 50px;
-  flex-grow: 0 !important;
-}
+  /* Logo tetap di kiri */
+  .nav .brand {
+    flex: 0 0 auto;
+  }
 
-/* Bagian kanan navbar */
-.nav-actions {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  /* Menu diberi jarak dari UrEnergy */
+  .nav .nav-links {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    flex-grow: 0 !important;
+    flex-basis: auto !important;
+    width: auto !important;
+    margin-left: 55px;
+    gap: 32px;
+  }
+
+  /* Bagian kanan tetap di ujung kanan */
+  .nav .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto;
+  }
+
 }
