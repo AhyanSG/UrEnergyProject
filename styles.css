@@ -1,7 +1,4 @@
 :root{
-  /* =========================
-     WARNA UTAMA
-  ========================= */
   --ink:#10263A;
   --ink-2:#173A56;
 
@@ -10,9 +7,6 @@
 
   --forest:#2C6E49;
 
-  /* =========================
-     LIGHT MODE
-  ========================= */
   --bg:#F8F9FA;
   --bg-alt:#EEF2F4;
 
@@ -32,10 +26,6 @@
   --maxw:1180px;
 }
 
-
-/* =========================
-   DARK MODE
-========================= */
 
 :root[data-theme="dark"]{
 
@@ -64,10 +54,6 @@
   --white:#FFFFFF;
 }
 
-
-/* =========================
-   RESET
-========================= */
 
 *{
   box-sizing:border-box;
@@ -132,10 +118,6 @@ section{
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
-
 .nav{
   position:sticky;
   top:0;
@@ -154,18 +136,14 @@ section{
 }
 
 .nav .wrap{
+  width:100%;
+  max-width:none;
   display:flex;
   align-items:center;
-  justify-content:space-between;
-
-  padding-top:16px;
-  padding-bottom:16px;
-
-  gap:16px;
+  justify-content:flex-start;
+  padding:16px 24px;
+  gap:0;
 }
-
-
-/* LOGO */
 
 .brand{
   display:flex;
@@ -186,11 +164,13 @@ section{
 }
 
 
-/* NAV LINKS */
-
 .nav-links{
   display:flex;
-
+  flex:0 0 auto;
+  flex-grow:0 !important;
+  flex-basis:auto !important;
+  width:auto !important;
+  margin-left:32px;
   gap:32px;
 
   font-size:15px;
@@ -210,8 +190,6 @@ section{
 }
 
 
-/* HOVER */
-
 .nav-links a:hover,
 .nav-links a:focus-visible{
   color:var(--amber);
@@ -219,8 +197,6 @@ section{
   border-color:var(--amber);
 }
 
-
-/* HALAMAN AKTIF */
 
 .nav-links a.active{
   color:var(--amber);
@@ -231,19 +207,13 @@ section{
 }
 
 
-/* NAV RIGHT */
-
 .nav-right{
   display:flex;
   align-items:center;
-
   gap:14px;
+  margin-left:auto;
 }
 
-
-/* =========================
-   BUTTON GABUNG
-========================= */
 
 .nav-cta{
   background:var(--ink);
@@ -275,8 +245,6 @@ section{
 }
 
 
-/* DARK NAV CTA */
-
 :root[data-theme="dark"] .nav-cta{
   background:#18344C;
   color:#F4F7F9;
@@ -287,10 +255,6 @@ section{
   color:#10263A;
 }
 
-
-/* =========================
-   THEME SWITCH
-========================= */
 
 .theme-toggle{
   display:inline-flex;
@@ -338,14 +302,10 @@ section{
 }
 
 
-/* DEFAULT = SUN */
-
 .theme-toggle .icon-moon{
   display:none;
 }
 
-
-/* DARK = MOON */
 
 :root[data-theme="dark"] .theme-toggle{
   background:#172B3E;
@@ -371,10 +331,6 @@ section{
   display:block;
 }
 
-
-/* =========================
-   MOBILE NAV
-========================= */
 
 .nav-toggle{
   display:none;
@@ -402,6 +358,8 @@ section{
 
   .nav-links{
     position:absolute;
+    margin-left:0 !important;
+    flex-basis:auto !important;
 
     top:100%;
     left:0;
@@ -438,6 +396,11 @@ section{
 
   .nav-toggle{
     display:block;
+    margin-left:auto;
+  }
+
+  .nav-right{
+    margin-left:14px;
   }
 
   .nav-cta{
@@ -446,10 +409,6 @@ section{
 
 }
 
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
   background:linear-gradient(
@@ -519,8 +478,6 @@ section{
   flex-wrap:wrap;
 }
 
-
-/* BUTTON */
 
 .btn{
   display:inline-flex;
@@ -594,10 +551,6 @@ section{
 
 }
 
-
-/* =========================
-   DIAGRAM ANIMATION
-========================= */
 
 .flow-line{
   stroke-dasharray:340;
@@ -682,10 +635,6 @@ section{
 }
 
 
-/* =========================
-   STRIP
-========================= */
-
 .strip{
   background:var(--ink);
 
@@ -722,10 +671,6 @@ section{
   font-weight:600;
 }
 
-
-/* =========================
-   ABOUT
-========================= */
 
 .about .wrap{
   display:grid;
@@ -775,10 +720,6 @@ section{
   margin-top:16px;
 }
 
-
-/* =========================
-   BUSINESS LINES
-========================= */
 
 .lines{
   background:var(--bg-alt);
@@ -868,10 +809,6 @@ section{
 }
 
 
-/* =========================
-   STATS
-========================= */
-
 .stats .wrap{
   display:flex;
 
@@ -942,10 +879,6 @@ section{
   margin-top:6px;
 }
 
-
-/* =========================
-   SUSTAINABILITY
-========================= */
 
 .sustain{
   background:var(--bg-alt);
@@ -1023,10 +956,6 @@ section{
   color:var(--amber);
 }
 
-/* =========================
-   CTA
-========================= */
-
 .cta-band{
   background:var(--ink);
 
@@ -1063,10 +992,6 @@ section{
   max-width:44ch;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
 
 footer{
   background:var(--bg);
@@ -1154,10 +1079,6 @@ footer{
 }
 
 
-/* =========================
-   ACCESSIBILITY
-========================= */
-
 .skip-link{
   position:absolute;
 
@@ -1190,10 +1111,6 @@ button:focus-visible{
 }
 
 
-/* =========================
-   PAGE HERO
-========================= */
-
 .page-hero{
   background:linear-gradient(
     180deg,
@@ -1224,7 +1141,6 @@ button:focus-visible{
   margin:18px 0 0;
 }
 
-/* Bootstrap navbar integration: Bootstrap handles the collapse, UrEnergy keeps the original look. */
 .nav.navbar { padding-top: 0; padding-bottom: 0; }
 .nav.navbar .navbar-toggler {
   display: none;

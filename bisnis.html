@@ -130,8 +130,6 @@
   </div>
 </footer>
 <script>
-
-  // ---- Theme toggle (light / dark) --
   const THEME_KEY = 'urenergy-theme';
   const root = document.documentElement;
   const themeBtn = document.getElementById('themeToggle');
@@ -140,7 +138,7 @@
     try { return localStorage.getItem(THEME_KEY); } catch(e){ return null; }
   }
   function storeTheme(value){
-    try { localStorage.setItem(THEME_KEY, value); } catch(e){ /* ignore, per-viewer convenience only */ }
+    try { localStorage.setItem(THEME_KEY, value); } catch(e){  }
   }
   function applyTheme(theme){
     root.setAttribute('data-theme', theme);
@@ -159,7 +157,6 @@
 </script>
 
 <script>
-  // Mobile navbar toggle
   document.querySelectorAll('.nav-toggle').forEach((toggle) => {
     const targetId = toggle.getAttribute('aria-controls');
     const menu = document.getElementById(targetId);
