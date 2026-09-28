@@ -1223,3 +1223,32 @@ button:focus-visible{
 
   margin:18px 0 0;
 }
+
+/* Bootstrap navbar integration: Bootstrap handles the collapse, UrEnergy keeps the original look. */
+.nav.navbar { padding-top: 0; padding-bottom: 0; }
+.nav.navbar .navbar-toggler {
+  display: none;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 4px;
+  border-radius: 4px;
+}
+.nav.navbar .navbar-toggler:focus { box-shadow: 0 0 0 .15rem rgba(232,135,30,.2); }
+.nav.navbar .navbar-toggler span {
+  display: block; width: 24px; height: 2px; background: var(--heading); margin: 5px 0;
+}
+.nav.navbar .nav-links a {
+  color: var(--text-soft) !important;
+  text-decoration: none;
+}
+.nav.navbar .nav-links a:hover,
+.nav.navbar .nav-links a:focus-visible,
+.nav.navbar .nav-links a.active {
+  color: var(--amber) !important;
+}
+@media (max-width: 860px) {
+  .nav.navbar .navbar-toggler { display: block; }
+  .nav.navbar .nav-links { display: none; }
+  .nav.navbar .nav-links.show { display: flex; }
+}
