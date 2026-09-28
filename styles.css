@@ -1252,3 +1252,26 @@ button:focus-visible{
   .nav.navbar .nav-links { display: none; }
   .nav.navbar .nav-links.show { display: flex; }
 }
+
+/* ===== FIX JARAK NAVBAR ===== */
+
+.nav .wrap {
+  display: flex;
+  align-items: center;
+}
+
+/* Jarak UrEnergy ke menu */
+.nav-links {
+  display: flex;
+  gap: 32px;
+  margin-left: 50px;
+  flex-grow: 0 !important;
+}
+
+/* Bagian kanan navbar */
+.nav-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
