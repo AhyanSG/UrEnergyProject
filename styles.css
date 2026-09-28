@@ -1252,34 +1252,3 @@ button:focus-visible{
   .nav.navbar .nav-links { display: none; }
   .nav.navbar .nav-links.show { display: flex; }
 }
-
-/* ===== FIX NAVBAR ===== */
-@media (min-width: 861px) {
-  .nav .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0;
-  }
-
-  .nav .brand {
-    flex: 0 0 auto;
-  }
-
-  .nav .nav-links {
-    display: flex !important;
-    flex: 0 0 auto !important;
-    flex-grow: 0 !important;
-    flex-basis: auto !important;
-    width: auto !important;
-    margin-left: 16px;
-    gap: 32px;
-  }
-
-  .nav .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-left: auto;
-  }
-}
