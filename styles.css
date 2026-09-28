@@ -948,9 +948,12 @@ section{
 ========================= */
 
 .sustain{
-  background:var(--forest);
+  background:var(--bg-alt);
+  color:var(--text);
 
-  color:var(--white);
+  transition:
+    background-color .25s ease,
+    color .25s ease;
 }
 
 .sustain .wrap{
@@ -974,11 +977,11 @@ section{
 .sustain h2{
   font-size:clamp(26px,3.4vw,36px);
 
-  color:var(--white);
+  color:var(--heading);
 }
 
 .sustain p{
-  color:#DCEAE0;
+  color:var(--text-soft);
 
   font-size:16.5px;
 
@@ -1004,7 +1007,7 @@ section{
 
   font-size:15px;
 
-  color:#EAF3EC;
+  color:var(--text);
 
   align-items:flex-start;
 }
@@ -1013,14 +1016,12 @@ section{
   flex:none;
 
   width:20px;
-
   height:20px;
 
   margin-top:2px;
 
   color:var(--amber);
 }
-
 
 /* =========================
    CTA
