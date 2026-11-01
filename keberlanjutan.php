@@ -1,3 +1,5 @@
+<?php include 'koneksi.php'; ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -24,14 +26,14 @@
     <div class="nav-links collapse navbar-collapse" id="navLinks">
     <a href="index.html">Beranda</a>
     <a href="bisnis.html">Bisnis</a>
-    <a href="keberlanjutan.html" class="active">Keberlanjutan</a>
+    <a href="keberlanjutan.php" class="active">Keberlanjutan</a>
     </div>
     <div class="nav-right">
       <button class="theme-toggle" id="themeToggle" aria-label="Ganti mode gelap/terang">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
       </button>
-      <a class="nav-cta" href="keberlanjutan.html#karier">Gabung Bersama Kami</a>
+      <a class="nav-cta" href="keberlanjutan.php#karier">Gabung Bersama Kami</a>
     </div>
   </div>
 </nav>
@@ -64,8 +66,41 @@
         <h2>Bangun kariermu di jantung energi Indonesia.</h2>
         <p>Dari insinyur lapangan hingga peneliti energi bersih — UrEnergy membuka jalan bagi generasi yang ingin ambil bagian.</p>
       </div>
-      <a class="btn btn-primary" href="#top">Lihat Lowongan</a>
+      <a class="btn btn-primary" href="#lowongan">Lihat Lowongan</a>
     </div>
+
+    </section>
+
+<section class="lowongan-list" id="lowongan">
+<div class="lowongan-grid">
+  <?php
+  $q = mysqli_query($conn, "SELECT * FROM lowongan ORDER BY status ASC, id ASC");
+  while ($r = mysqli_fetch_assoc($q)) {
+    $buka = $r['status'] === 'buka';
+  ?>
+    <a class="lowongan-card <?= $buka ? '' : 'is-full' ?>"
+       <?= $buka ? 'href="lamar.php?id=' . $r['id'] . '"' : 'aria-disabled="true" tabindex="-1"' ?>>
+
+      <span class="lowongan-divisi"><?= htmlspecialchars($r['divisi']) ?></span>
+      <h3><?= htmlspecialchars($r['judul']) ?></h3>
+
+      <p class="lowongan-lokasi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <?= htmlspecialchars($r['lokasi']) ?>
+      </p>
+
+      <div class="lowongan-foot">
+        <span class="lowongan-status <?= $buka ? 'buka' : 'penuh' ?>">
+          <?= $buka ? 'Dibuka' : 'Kuota Penuh' ?>
+        </span>
+        <?php if ($buka) { ?>
+          <span class="lowongan-arrow">Lihat detail →</span>
+        <?php } ?>
+      </div>
+    </a>
+  <?php } ?>
+</div>
+</section>
   
 </main>
 <footer>
@@ -89,8 +124,8 @@
       <div>
         <h4>Program</h4>
         <ul>
-          <li><a href="keberlanjutan.html">Keberlanjutan</a></li>
-          <li><a href="keberlanjutan.html#karier">Karier</a></li>
+          <li><a href="keberlanjutan.php">Keberlanjutan</a></li>
+          <li><a href="keberlanjutan.php#karier">Karier</a></li>
           <li><a href="#">Riset & Inovasi</a></li>
         </ul>
       </div>
