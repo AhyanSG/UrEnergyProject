@@ -1,59 +1,51 @@
 :root{
-  --ink:#10263A;
-  --ink-2:#173A56;
+  color-scheme:light;
 
+  --ink:#0F2538;
+  --ink-2:#18405E;
   --amber:#E8871E;
-  --amber-deep:#C96F12;
+  --amber-deep:#B35E08;
+  --forest:#26663F;
 
-  --forest:#2C6E49;
-
-  --bg:#F8F9FA;
-  --bg-alt:#EEF2F4;
-
-  --text:#25313C;
-  --text-soft:#64717D;
-  --heading:#10263A;
-
-  --border:rgba(16,38,58,0.12);
-
-  --nav-bg:rgba(248,249,250,0.94);
+  --bg:#F6F7F9;
+  --bg-alt:#ECEFF3;
   --card-bg:#FFFFFF;
+  --nav-bg:rgba(246,247,249,0.92);
 
-  --kicker:#C96F12;
+  --text:#243241;
+  --text-soft:#5C6A79;
+  --heading:#0F2538;
+  --kicker:#B35E08;
+
+  --border:rgba(15,37,56,0.12);
 
   --white:#FFFFFF;
-
   --maxw:1180px;
 }
 
-
 :root[data-theme="dark"]{
+  color-scheme:dark;
 
-  --bg:#0B1622;
-  --bg-alt:#101F2D;
+  --ink:#08141F;
+  --ink-2:#0F2B42;
+  --amber:#F2A04A;
+  --amber-deep:#F2A04A;
+  --forest:#52AA7C;
 
-  --text:#E5EBF0;
-  --text-soft:#AAB6C1;
-  --heading:#F3F6F8;
+  --bg:#0A1520;
+  --bg-alt:#0F1E2C;
+  --card-bg:#142536;
+  --nav-bg:rgba(10,21,32,0.92);
+
+  --text:#E4EAF0;
+  --text-soft:#A6B3BF;
+  --heading:#F4F7FA;
+  --kicker:#F2A04A;
 
   --border:rgba(255,255,255,0.10);
 
-  --nav-bg:rgba(11,22,34,0.94);
-  --card-bg:#142536;
-
-  --kicker:#F0A052;
-
-  --ink:#091827;
-  --ink-2:#112D45;
-
-  --amber:#F09A3E;
-  --amber-deep:#F0A052;
-
-  --forest:#3D8A61;
-
   --white:#FFFFFF;
 }
-
 
 *{
   box-sizing:border-box;
@@ -117,7 +109,6 @@ section{
 
 }
 
-
 .nav{
   position:sticky;
   top:0;
@@ -163,7 +154,6 @@ section{
   height:26px;
 }
 
-
 .nav-links{
   display:flex;
   flex:0 0 auto;
@@ -189,14 +179,12 @@ section{
     border-color .18s ease;
 }
 
-
 .nav-links a:hover,
 .nav-links a:focus-visible{
   color:var(--amber);
 
   border-color:var(--amber);
 }
-
 
 .nav-links a.active{
   color:var(--amber);
@@ -206,14 +194,12 @@ section{
   font-weight:600;
 }
 
-
 .nav-right{
   display:flex;
   align-items:center;
   gap:14px;
   margin-left:auto;
 }
-
 
 .nav-cta{
   background:var(--ink);
@@ -244,7 +230,6 @@ section{
   transform:translateY(1px);
 }
 
-
 :root[data-theme="dark"] .nav-cta{
   background:#18344C;
   color:#F4F7F9;
@@ -254,7 +239,6 @@ section{
   background:#F09A3E;
   color:#10263A;
 }
-
 
 .theme-toggle{
   display:inline-flex;
@@ -301,11 +285,9 @@ section{
   height:18px;
 }
 
-
 .theme-toggle .icon-moon{
   display:none;
 }
-
 
 :root[data-theme="dark"] .theme-toggle{
   background:#172B3E;
@@ -330,7 +312,6 @@ section{
 :root[data-theme="dark"] .theme-toggle .icon-moon{
   display:block;
 }
-
 
 .nav-toggle{
   display:none;
@@ -409,7 +390,6 @@ section{
 
 }
 
-
 .hero{
   background:linear-gradient(
     180deg,
@@ -477,7 +457,6 @@ section{
 
   flex-wrap:wrap;
 }
-
 
 .btn{
   display:inline-flex;
@@ -551,7 +530,6 @@ section{
 
 }
 
-
 .flow-line{
   stroke-dasharray:340;
 
@@ -574,11 +552,9 @@ section{
 
 .flow-node{
   opacity:0;
-
-  transform:scale(.6);
-
+  scale:.6;
+  transform-box:fill-box;
   transform-origin:center;
-
   animation:pop .5s ease forwards;
 }
 
@@ -607,13 +583,10 @@ section{
 }
 
 @keyframes pop{
-
   to{
     opacity:1;
-
-    transform:scale(1);
+    scale:1;
   }
-
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -627,13 +600,12 @@ section{
   .flow-node{
     opacity:1;
 
-    transform:scale(1);
+    scale:1;
 
     animation:none;
   }
 
 }
-
 
 .strip{
   background:var(--ink);
@@ -670,7 +642,6 @@ section{
 
   font-weight:600;
 }
-
 
 .about .wrap{
   display:grid;
@@ -719,7 +690,6 @@ section{
 .about-copy p + p{
   margin-top:16px;
 }
-
 
 .lines{
   background:var(--bg-alt);
@@ -808,7 +778,6 @@ section{
   margin:0;
 }
 
-
 .stats .wrap{
   display:flex;
 
@@ -878,7 +847,6 @@ section{
 
   margin-top:6px;
 }
-
 
 .sustain{
   background:var(--bg-alt);
@@ -992,7 +960,6 @@ section{
   max-width:44ch;
 }
 
-
 footer{
   background:var(--bg);
 
@@ -1078,7 +1045,6 @@ footer{
   color:var(--text-soft);
 }
 
-
 .skip-link{
   position:absolute;
 
@@ -1109,7 +1075,6 @@ button:focus-visible{
 
   outline-offset:2px;
 }
-
 
 .page-hero{
   background:linear-gradient(
@@ -1169,12 +1134,6 @@ button:focus-visible{
   .nav.navbar .nav-links.show { display: flex; }
 }
 
-/* =====================================================
-   LOWONGAN (daftar kotak) + HALAMAN LAMAR
-   Gaya mengikuti bagian "lines" dan "stats": datar,
-   border tipis, radius 4px, hover = oranye.
-   ===================================================== */
-
 .lowongan-list{
   background:var(--bg-alt);
   transition:background-color .25s ease;
@@ -1206,7 +1165,7 @@ button:focus-visible{
   grid-template-columns:repeat(3,1fr);
   gap:24px;
 }
-/* kalau grid langsung di bawah <section> (tanpa .wrap), tetap kasih jarak tepi */
+
 .lowongan-list > .lowongan-grid{
   max-width:var(--maxw);
   margin:0 auto;
@@ -1219,7 +1178,6 @@ button:focus-visible{
   .lowongan-grid{ grid-template-columns:1fr; gap:16px; }
 }
 
-/* --- kotak --- */
 .lowongan-card{
   display:flex;
   flex-direction:column;
@@ -1292,7 +1250,6 @@ a.lowongan-card:hover h3{ color:var(--amber); }
   border-top:1px solid var(--border);
 }
 
-/* status: titik hijau = dibuka, abu = penuh */
 .lowongan-status{
   display:inline-flex;
   align-items:center;
@@ -1321,7 +1278,6 @@ a.lowongan-card:hover h3{ color:var(--amber); }
 a.lowongan-card:hover .lowongan-arrow{ transform:translateX(3px); }
 a.lowongan-card:hover .lowongan-more{ color:var(--amber); }
 
-/* --- kuota penuh --- */
 .lowongan-card.is-full{
   background:transparent;
   box-shadow:none;
@@ -1332,7 +1288,6 @@ a.lowongan-card:hover .lowongan-more{ color:var(--amber); }
 .lowongan-card.is-full .lowongan-divisi{ color:var(--text-soft); }
 .lowongan-card.is-full .lowongan-lokasi svg{ color:var(--text-soft); }
 
-/* kompatibel dengan markup lama (kalau PHP belum diganti) */
 .lowongan-top{
   display:flex;
   justify-content:space-between;
@@ -1346,7 +1301,6 @@ a.lowongan-card:hover .lowongan-more{ color:var(--amber); }
   color:var(--text-soft);
   display:-webkit-box;
   -webkit-line-clamp:3;
-  line-clamp: 3;
   -webkit-box-orient:vertical;
   overflow:hidden;
 }
@@ -1364,11 +1318,6 @@ a.lowongan-card:hover .lowongan-more{ color:var(--amber); }
   border:1px solid var(--border);
   cursor:not-allowed;
 }
-
-
-/* =====================================================
-   HALAMAN LAMAR
-   ===================================================== */
 
 .btn-outline{
   border-color:rgba(255,255,255,.35);
@@ -1451,7 +1400,6 @@ a.lowongan-card:hover .lowongan-more{ color:var(--amber); }
   background:var(--amber);
 }
 
-/* kotak form: biru tua kayak hero dan banner CTA */
 .lamar-form{
   background:linear-gradient(180deg,var(--ink) 0%,var(--ink-2) 100%);
   border-color:var(--ink);
@@ -1498,4 +1446,56 @@ a.lowongan-card:hover .lowongan-more{ color:var(--amber); }
   gap:12px;
   flex-wrap:wrap;
   margin-top:6px;
+}
+
+.about,
+.stats{
+  background:var(--bg);
+  color:var(--text);
+  transition:background-color .25s ease, color .25s ease;
+}
+.lines,
+.sustain,
+.lowongan-list{
+  background:var(--bg-alt);
+  color:var(--text);
+}
+::selection{
+  background:var(--amber);
+  color:var(--ink);
+}
+
+.hero-fig{
+  position:relative;
+  padding:28px;
+  margin-bottom:40px;
+  transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));
+  transform-style:preserve-3d;
+  will-change:transform;
+  animation:heroFloat 7s ease-in-out infinite;
+}
+
+.hero-fig::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 30px 60px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.hero-fig svg{
+  position:relative;
+  transform:translateZ(60px);
+  filter:drop-shadow(0 18px 22px rgba(0,0,0,.35));
+}
+
+@keyframes heroFloat{
+  0%,100%{ translate:0 0; }
+  50%{ translate:0 -10px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero-fig{ animation:none; }
 }
